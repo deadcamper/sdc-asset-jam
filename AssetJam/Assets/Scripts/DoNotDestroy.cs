@@ -1,16 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-/// <summary>
-/// Takes the game object attached to this component and immediately marks it as "Do Not Destroy", then cleans itself up.
-/// </summary>
-public class DoNotDestroy : MonoBehaviour
+namespace DHG.Helpers
 {
-    // Start is called before the first frame update
-    void Awake()
+    /// <summary>
+    /// Takes the game object attached to this component and immediately marks it as "Do Not Destroy", then cleans the script up.
+    /// </summary>
+    public class DoNotDestroy : MonoBehaviour
     {
-        DontDestroyOnLoad(gameObject);
-        Destroy(this);
+        // Start is called before the first frame update
+        void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+            Destroy(this);
+        }
     }
 }
